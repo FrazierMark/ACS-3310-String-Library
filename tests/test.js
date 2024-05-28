@@ -6,32 +6,40 @@ test('should return the string in uppercase', () => {
 
 test('should return the string in all uppercase', () => {
 	expect(stringUtils.allCaps('hello')).toBe('HELLO');
+  expect(stringUtils.allCaps('hello world')).toBe('HELLO WORLD');
 });
 
 test('should return the string with the first character of each word capitalized', () => {
 	expect(stringUtils.capitalizeWords('hello world')).toBe('Hello World');
+  expect(stringUtils.capitalizeWords('hello')).toBe('Hello');
 });
 
 test('should remove extra spaces from the beginning and end and reduce multiple spaces in the middle to a single space', () => {
 	expect(stringUtils.removeExtraSpaces('  Hello   world  ')).toBe(
 		'Hello world'
 	);
+  expect(stringUtils.removeExtraSpaces(' Hello        world ')).toBe('Hello world');
 });
 
 test('should remove extra spaces and replace spaces with hyphens, and make all characters lowercase', () => {
 	expect(stringUtils.kebobCase('  Hello   world  ')).toBe('hello-world');
+  expect(stringUtils.kebobCase(' Hello        world ')).toBe('hello-world');
 });
 
 test('should remove extra spaces and replace spaces with underscores, and make all characters lowercase', () => {
 	expect(stringUtils.snakeCase('  Hello   world  ')).toBe('hello_world');
+  expect(stringUtils.snakeCase(' Hello        world ')).toBe('hello_world');
 });
 
 test('should lowercase the first character of the first word, uppercase the first character of all other words, and remove all spaces', () => {
 	expect(stringUtils.camelCase('  hello   world  ')).toBe('helloWorld');
+  expect(stringUtils.camelCase(' Hello        world ')).toBe('helloWorld');
 });
 
 test('should take the first character of a string and move it to the end of the string', () => {
 	expect(stringUtils.shift('hello')).toBe('elloh');
+  expect(stringUtils.shift('Hello')).toBe('elloH');
+  expect(stringUtils.shift('')).toBe('');
 });
 
 test('should convert the string to an array of the three longest words starting with hashtags', () => {
