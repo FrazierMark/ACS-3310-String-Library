@@ -1,5 +1,8 @@
 # String Library
 
+![GitHub last commit](https://img.shields.io/github/last-commit/FrazierMark/ACS-3310-String-Library)
+
+
 This is a JavaScript library that provides various string manipulation functions.
 
 ## capitalize(str)
